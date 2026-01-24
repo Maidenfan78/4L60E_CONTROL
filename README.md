@@ -16,6 +16,8 @@ This architecture prioritizes:
 - simplicity and robustness
 - extensibility for future features
 
+Pressure switch manifold feedback is strongly recommended as a safety cross-check.
+
 ---
 
 ## Vehicle / Powertrain
@@ -36,6 +38,9 @@ This architecture prioritizes:
 - Optional torque converter lockup
 - Independent transmission operation (no reliance on Pi)
 - Logging and configuration via SSH or USB
+
+EPC control assumption for this project: **PWM duty increases EPC current and reduces line pressure**.
+Failsafe behavior is **0% duty = max pressure**.
 
 ---
 

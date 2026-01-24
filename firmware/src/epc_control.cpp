@@ -6,11 +6,11 @@
 namespace tcm {
 
 void EpcController::Init() {
- analogWrite(hw::kPinEPC, config_.max_duty);
+  analogWrite(hw::kPinEPC, config_.failsafe_duty);
 }
 
 void EpcController::ApplyFailsafe() {
- analogWrite(hw::kPinEPC, config_.max_duty);
+  analogWrite(hw::kPinEPC, config_.failsafe_duty);
 }
 
 void EpcController::Update() {

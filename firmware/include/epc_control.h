@@ -5,7 +5,7 @@
 namespace tcm {
 
 struct EpcConfig {
- uint16_t max_duty = 255;
+  uint16_t failsafe_duty = 0;
 };
 
 class EpcController {

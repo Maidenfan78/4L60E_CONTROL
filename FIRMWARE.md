@@ -68,13 +68,16 @@ The firmware runs independently of the Raspberry Pi.
 ### Base Pressure
 - Function of TPS (and optionally gear)
 - Conservative mapping preferred
+ - **Assumption:** higher PWM duty increases EPC current and **reduces** line pressure.
+   - Therefore **0% duty = max pressure** (failsafe).
+   - If your valve body behaves differently, invert the control in firmware.
 
 ### Shift Bump
 - Temporary EPC duty increase
 - Duration: ~200–400 ms (tunable)
 
 ### Failsafe
-- Invalid TPS / VSS → max EPC duty
+- Invalid TPS / VSS → **0% EPC duty** (max pressure)
 
 ---
 
@@ -98,7 +101,7 @@ The firmware runs independently of the Raspberry Pi.
 
 - Watchdog timer enabled
 - Default output states on reset:
-  - Max EPC pressure
+  - Max EPC pressure (0% duty)
   - TCC unlocked
 - VSS loss:
   - Lock out downshifts

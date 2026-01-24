@@ -78,6 +78,7 @@ All solenoids are driven via **automotive-rated low-side drivers**.
 ### Strongly Recommended
 - **Transmission Temperature Sensor**
 - **Engine RPM** (from MS3)
+- **Pressure switch manifold** (gear confirmation diagnostics)
 
 ### Optional / Future
 - Paddle shifters
@@ -103,13 +104,23 @@ All solenoids are driven via **automotive-rated low-side drivers**.
 - VSS input should be protected and conditioned
 - All outputs default to a **safe state** on MCU reset
 
----
+--- 
 
 ## Safety Philosophy
 
 - Loss of logger/UI must not affect transmission control
 - Any invalid sensor state → increased line pressure
 - Harsh shifts are preferred over clutch slip
+
+---
+
+## Signal Levels & Conditioning
+
+- **VSS**: VR sensors need a conditioner (comparator/zero-cross). Hall sensors can be direct with pull-up.
+- **TPS**: 0–5V must be scaled/buffered to 0–3.3V for Teensy ADC.
+- **Brake**: use a pull-up/pull-down and debounce in firmware.
+
+---
 
 Teensy 4.1 – Pin Assignment Table
 
@@ -183,10 +194,11 @@ Default Output States (Fail-Safe)
 Output	Reset State	Reason
 SSA	OFF	Prevent unintended shift
 SSB	OFF	Prevent unintended shift
-EPC	MAX DUTY	Protect clutches
+EPC	OFF (0% duty)	Max pressure (project assumption)
 TCC	OFF	Prevent stall
 
 These defaults must be enforced in firmware AND hardware pull states.
+SSA/SSB OFF corresponds to a 3rd-gear command; this is the defined failsafe gear.
 
 Pin Usage Summary
 Category	Pins Used

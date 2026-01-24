@@ -53,8 +53,6 @@ Good alternatives:
 
 IRLZ44N (old but works)
 
-AOZ1284
-
 IPB044N06L3
 
 ⚠️ Avoid random eBay MOSFETs.
@@ -121,11 +119,17 @@ Default EPC behavior (hardware + firmware)
 
 Gate pulldown ensures OFF if MCU dies
 
-Firmware sets MAX duty on fault
+Firmware sets **0% duty on fault** (max pressure, project assumption)
 
 Solenoid supply is always present
 
-8️⃣ Current handling & thermal design
+8️⃣ EPC direction (project assumption)
+
+PWM duty increases EPC current and **reduces** line pressure.
+Therefore **0% duty = max pressure**.
+If your valve body behaves differently, invert in firmware.
+
+9️⃣ Current handling & thermal design
 EPC MOSFET
 
 Continuous PWM = heat
@@ -142,7 +146,7 @@ Lower duty
 
 No heatsink usually needed
 
-9️⃣ Protection on the 12V supply (mandatory)
+10️⃣ Protection on the 12V supply (mandatory)
 At the driver board input:
 
 TVS diode: SMBJ58A (load dump protection)
@@ -159,7 +163,7 @@ Decoupling
 
 0.1 µF ceramic per channel
 
-🔟 Full driver channel BOM (per solenoid)
+11️⃣ Full driver channel BOM (per solenoid)
 Part	Value
 MOSFET	Infineon BSC010NE2LS5
 Gate resistor	100 Ω
@@ -167,7 +171,7 @@ Gate pulldown	100 kΩ
 Flyback TVS	SMBJ36CA
 Decoupling cap	0.1 µF
 Bulk cap	100 µF (shared rail)
-1️⃣1️⃣ Wiring summary (Teensy → Driver)
+12️⃣ Wiring summary (Teensy → Driver)
 Signal	Teensy	Driver
 SSA	Pin 2	Gate via 100Ω
 SSB	Pin 3	Gate via 100Ω
@@ -175,14 +179,14 @@ TCC	Pin 4	Gate via 100Ω
 EPC	Pin 5 (PWM)	Gate via 100Ω
 GND	GND	Power ground
 +12V	Vehicle	Solenoid feed
-1️⃣2️⃣ Fail-safe behavior (designed in)
+13️⃣ Fail-safe behavior (designed in)
 Failure	Result
-MCU reset	All solenoids OFF
-EPC fault	Firmware forces MAX duty
+MCU reset	SSA/SSB default to 3rd (both OFF), TCC OFF, EPC 0% duty
+EPC fault	Firmware forces 0% duty (max pressure)
 Pi crash	No effect
 Sensor loss	MAX pressure, no TCC
 Brownout	Gate pulldowns force OFF
-1️⃣3️⃣ What this design deliberately avoids
+14️⃣ What this design deliberately avoids
 
 ❌ Relay switching (too slow)
 

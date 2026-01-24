@@ -32,10 +32,10 @@ void ConfigurePins() {
 }
 
 void ApplySafeOutputs() {
- digitalWrite(hw::kPinSSA, LOW);
- digitalWrite(hw::kPinSSB, LOW);
- digitalWrite(hw::kPinTCC, LOW);
- analogWrite(hw::kPinEPC, 255); // Max duty to protect clutches.
+  digitalWrite(hw::kPinSSA, LOW);
+  digitalWrite(hw::kPinSSB, LOW);
+  digitalWrite(hw::kPinTCC, LOW);
+  analogWrite(hw::kPinEPC, 0); // 0% duty = max pressure (project assumption).
 }
 
 } // namespace
