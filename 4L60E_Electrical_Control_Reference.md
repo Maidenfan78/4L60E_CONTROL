@@ -38,21 +38,23 @@ It focuses on:
 | LUF | ~30–40 Hz | Optional / transmission dependent |
 | TCC (if PWM) | 20–100 Hz | Often used as on/off |
 
-For EPC:
-- Duty cycle ↑ → line pressure ↑
-- Duty cycle ↓ → line pressure ↓
+For EPC (exhaust-bleed type):
+
+- Duty cycle ↑ → line pressure ↓ (exhaust open longer)
+- Duty cycle ↓ → line pressure ↑ (exhaust open shorter)
+- 0% duty = max pressure (failsafe)
 
 ---
 
 ## 3) EPC (Line Pressure) Control Guidelines
 
-- EPC must **never drop to 0% duty under load**
+- EPC duty must **never rise too high under load** (causes low pressure / slip)
 - Conservative tuning is preferred:
   - harsh shifts > clutch slip
 - Use a **shift pressure bump**:
-  - temporarily raise EPC duty during gear changes
+  - temporarily lower EPC duty during gear changes (raises pressure)
 - On fault:
-  - force **maximum EPC duty**
+  - force **0% EPC duty** (max pressure)
   - disable TCC
 
 Typical OEM duty range:

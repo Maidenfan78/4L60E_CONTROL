@@ -107,8 +107,9 @@ Used for diagnostics and sanity checking.
 ## 6) EPC Control Notes
 
 - PWM frequency ≈ **293 Hz** (OEM)
-- Higher duty = higher line pressure
-- Must default to **high pressure on fault**
+- Higher duty = **lower** line pressure (exhaust-bleed solenoid)
+- 0% duty = max pressure (failsafe)
+- Must default to **high pressure on fault** (0% duty)
 
 ---
 
