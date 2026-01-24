@@ -65,19 +65,49 @@ The firmware runs independently of the Raspberry Pi.
 
 ## EPC (Line Pressure) Control
 
-### Base Pressure
-- Function of TPS (and optionally gear)
-- Conservative mapping preferred
- - **Assumption:** higher PWM duty increases EPC current and **reduces** line pressure.
-   - Therefore **0% duty = max pressure** (failsafe).
-   - If your valve body behaves differently, invert the control in firmware.
+### Pressure Command Abstraction
+
+Firmware uses a **Pressure Command %** scale internally:
+
+| Pressure Command | Meaning               |
+|------------------|-----------------------|
+| 0%               | Minimum line pressure |
+| 100%             | Maximum line pressure |
+
+This is converted to EPC duty via inversion (GM-style):
+
+```text
+Pressure 100% (max) → EPC duty ~5% (near OFF)
+Pressure 0% (min)   → EPC duty ~60% (hard ceiling)
+```
+
+**Important:** 60% duty is a hard upper limit, not arbitrary. At ~4Ω coil resistance, this limits average current to ~1.1A for thermal and hydraulic protection.
+
+**Why this abstraction?**
+
+- Tuning tables are intuitive (higher load → higher pressure command)
+- Inversion happens in one place, not scattered through code
+- Matches MegaShift and other controller conventions
+
+### Base Pressure Mapping
+
+| TPS         | Pressure Command |
+|-------------|------------------|
+| 0% (closed) | ~30%             |
+| 25%         | ~40%             |
+| 50%         | ~55%             |
+| WOT         | ~70%             |
+
+(Values are starting points — tune with a line pressure gauge.)
 
 ### Shift Bump
-- Temporary EPC duty increase
+
+- Temporarily raise pressure command (e.g., +20%)
 - Duration: ~200–400 ms (tunable)
 
 ### Failsafe
-- Invalid TPS / VSS → **0% EPC duty** (max pressure)
+
+- Invalid TPS / VSS / fault → **100% pressure command** (max pressure, ~0% EPC duty)
 
 ---
 
@@ -88,12 +118,19 @@ The firmware runs independently of the Raspberry Pi.
 - Vehicle speed above threshold
 - TPS below threshold
 - Brake not applied
+- **Delay timer satisfied** (prevents lock/unlock cycling)
 
 ### Disable Conditions
-- Brake input
+
+- Brake input (immediate unlock)
 - Shift in progress
 - Over-temperature
 - Sensor fault
+- Throttle transient (rapid TPS change)
+
+### TCC Design Philosophy
+
+Per FuelTech practice: hysteresis and delays matter more than fancy logic. TCC must never fight EPC or gear changes. Conservative, delayed lockup is industry standard.
 
 ---
 
@@ -101,6 +138,7 @@ The firmware runs independently of the Raspberry Pi.
 
 - Watchdog timer enabled
 - Default output states on reset:
+  - SSA OFF, SSB OFF → 3rd gear (intentional GM limp mode)
   - Max EPC pressure (0% duty)
   - TCC unlocked
 - VSS loss:

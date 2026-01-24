@@ -23,7 +23,7 @@ SSB	On/Off	Digital
 TCC	On/Off (or PWM optional)	Digital
 EPC / PCS	PWM, current-controlled-ish	Critical
 
-EPC current is typically 0.6–1.1 A, continuous PWM.
+EPC current range: **0–1.1 A** (0A = max pressure, ~1.1A = min pressure), continuous PWM.
 
 3️⃣ Recommended topology (one channel)
 
@@ -73,34 +73,38 @@ Controls EMI
 Improves MOSFET longevity
 
 6️⃣ Flyback protection (THIS IS NOT OPTIONAL)
-DO NOT use simple diodes for EPC
 
-A diode slows current decay → mushy shifts.
+### For SSA / SSB / TCC (on/off solenoids)
 
-Correct approach
+Use **bidirectional TVS** across solenoid:
 
-Bidirectional TVS diode across solenoid:
-
-Recommended:
-
-SMBJ36CA (36V clamp)
-
-SMCJ36CA (higher power)
-
-Connection:
-
-Drain ─── TVS ─── +12V
-
+- Recommended: **1.5KE36CA** (36V clamp, axial) or SMBJ36CA (SMD)
+- Connection: Drain ─── TVS ─── +12V
 
 This allows:
 
-fast current decay
+- fast current decay
+- controlled voltage spike
+- crisp solenoid release
 
-controlled voltage spike
+### For EPC (PWM pressure control)
 
-crisp solenoid release
+Use a **diode** (e.g., **1N4001** or 1N4007) across the EPC solenoid:
 
-This is OEM-style suppression.
+- Connection: Cathode to +12V, Anode to Drain
+- The slower current decay acts as a **low-pass filter** on pressure
+- Results in **smoother pressure modulation**
+
+This matches MegaShift recommendations for "greater line pressure control."
+
+Optionally add a small TVS (1.5KE36CA) in parallel for spike protection.
+
+| Solenoid | Flyback Type | Reason                        |
+|----------|--------------|-------------------------------|
+| SSA      | TVS          | Fast response for shifts      |
+| SSB      | TVS          | Fast response for shifts      |
+| TCC      | TVS          | Crisp lockup engagement       |
+| EPC      | Diode (+TVS) | Smooth pressure modulation    |
 
 7️⃣ EPC PWM specifics (very important)
 PWM frequency
@@ -123,11 +127,27 @@ Firmware sets **0% duty on fault** (max pressure, project assumption)
 
 Solenoid supply is always present
 
-8️⃣ EPC direction (project assumption)
+8️⃣ EPC direction and pressure abstraction
 
-PWM duty increases EPC current and **reduces** line pressure.
-Therefore **0% duty = max pressure**.
-If your valve body behaves differently, invert in firmware.
+**Hardware behavior (GM 4L60E):**
+
+- Higher EPC duty → more current → exhaust open longer → **lower** line pressure
+- Lower EPC duty → less current → exhaust closed more → **higher** line pressure
+- 0% duty = max pressure (failsafe)
+
+**Firmware abstraction (recommended):**
+
+Use a **Pressure Command %** scale (0–100%, where 100% = max pressure).
+Convert to EPC duty via inversion in one place:
+
+```text
+pressure_cmd 100% → EPC duty ~5%  (max pressure)
+pressure_cmd 0%   → EPC duty ~60% (min pressure, hard ceiling)
+```
+
+**Important:** 60% duty is a hard upper limit — not comfort tuning, but thermal + hydraulic protection. At ~4Ω coil, this limits average current to ~1.1A.
+
+This keeps tuning tables intuitive (higher TPS → higher pressure command).
 
 9️⃣ Current handling & thermal design
 EPC MOSFET
@@ -181,7 +201,7 @@ GND	GND	Power ground
 +12V	Vehicle	Solenoid feed
 13️⃣ Fail-safe behavior (designed in)
 Failure	Result
-MCU reset	SSA/SSB default to 3rd (both OFF), TCC OFF, EPC 0% duty
+MCU reset	SSA/SSB default to 3rd (both OFF — intentional GM limp mode), TCC OFF, EPC 0% duty
 EPC fault	Firmware forces 0% duty (max pressure)
 Pi crash	No effect
 Sensor loss	MAX pressure, no TCC

@@ -18,7 +18,7 @@ It focuses on:
 | Shift Solenoid A (SSA) | 1–2 / 3–4 shifts | 20–40 Ω | ~0.5–0.8 A | On/Off |
 | Shift Solenoid B (SSB) | 2–3 shifts | 20–40 Ω | ~0.5–0.8 A | On/Off |
 | 3–2 Control Solenoid | Coast downshift assist | 9–14 Ω | ~1.0–1.3 A | PWM |
-| EPC / PCS Solenoid | Line pressure control | **3.5–4.6 Ω** | **0.6–1.1 A** | **PWM (critical)** |
+| EPC / PCS Solenoid | Line pressure control | **3.5–4.6 Ω** | **0–1.1 A** (0A=max pressure) | **PWM (critical)** |
 | TCC Solenoid | Torque converter lockup | 20–40 Ω | ~1.0–1.5 A | On/Off or PWM |
 | LUF (if fitted) | Lockup feel modulation | ~10–15 Ω | ~1.0 A | PWM |
 
@@ -43,26 +43,55 @@ For EPC (exhaust-bleed type):
 - Duty cycle ↑ → line pressure ↓ (exhaust open longer)
 - Duty cycle ↓ → line pressure ↑ (exhaust open shorter)
 - 0% duty = max pressure (failsafe)
+- **60% duty is the hard ceiling** — not a comfort limit, but thermal + hydraulic protection
+  - At ~4Ω coil resistance, 60% duty limits average current to ~1.1A
+  - Never exceed 60% duty even when requesting minimum pressure
 
 ---
 
 ## 3) EPC (Line Pressure) Control Guidelines
 
+### Pressure Command Abstraction (Recommended)
+
+Use a **Pressure Command %** scale in firmware (0–100%, where 100% = max pressure).
+Convert to EPC duty via inversion in one place:
+
+| Pressure Command | EPC Duty (approx) | Result           |
+|------------------|-------------------|------------------|
+| 100% (max)       | ~5% (near OFF)    | Maximum pressure |
+| 50%              | ~30%              | Medium pressure  |
+| 0% (min)         | ~60% (near max)   | Minimum pressure |
+
+This keeps tuning tables intuitive and matches MegaShift conventions.
+
+### Control Rules
+
 - EPC duty must **never rise too high under load** (causes low pressure / slip)
 - Conservative tuning is preferred:
   - harsh shifts > clutch slip
 - Use a **shift pressure bump**:
-  - temporarily lower EPC duty during gear changes (raises pressure)
+  - temporarily raise pressure command during gear changes
 - On fault:
-  - force **0% EPC duty** (max pressure)
+  - force **100% pressure command** (0% EPC duty = max pressure)
   - disable TCC
 
-Typical OEM duty range:
-- Light load cruise: ~20–35%
-- Moderate load: ~35–50%
-- Heavy load / WOT: ~50–65%
+### Typical Pressure Command Ranges
+
+| Condition        | Pressure Command |
+|------------------|------------------|
+| Light load cruise| ~30–40%          |
+| Moderate load    | ~45–55%          |
+| Heavy load / WOT | ~60–75%          |
+| Shift bump       | +15–25%          |
 
 (Exact values depend on valve body and calibration.)
+
+### Flyback Suppression for EPC
+
+For **smoother pressure modulation**, use a **diode** (e.g., 1N4001) across the EPC solenoid.
+The slower current decay acts as a low-pass filter on pressure changes.
+
+For **SSA/SSB/TCC** (on/off solenoids), use **TVS** for faster response.
 
 ---
 
@@ -126,9 +155,13 @@ These can be used as:
 - Lockup only recommended in **3rd and 4th**
 - Always unlock:
   - during shifts
-  - on brake input
+  - on brake input (immediate)
   - at high TPS
+  - during throttle transients
   - during faults
+- Use **delay timer before lockup** — prevents lock/unlock cycling
+- Hysteresis matters more than fancy logic
+- TCC must never fight EPC or gear changes
 - PWM lockup (if used) should ramp gently to avoid shudder
 
 ---
@@ -148,8 +181,14 @@ These can be used as:
 ## 7) Standalone Controller Safety Rules (Recommended)
 
 - Default state on reset:
-  - max EPC duty
+  - SSA OFF, SSB OFF (3rd gear — intentional GM limp mode)
+  - max line pressure (0% EPC duty)
   - TCC off
+- **0% EPC duty (max pressure) triggers:**
+  - MCU reset / watchdog timeout
+  - sensor loss (TPS, VSS)
+  - over-temperature
+  - any fault condition
 - Loss of VSS:
   - inhibit downshifts
   - inhibit TCC

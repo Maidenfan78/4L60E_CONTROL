@@ -56,15 +56,20 @@ It covers the core controller plus a **4‑channel low‑side solenoid driver st
 | Gate pulldown | 4 | 100 kΩ, 1/4W | Axial leaded | Ensures OFF at reset |
 | Local decoupling | 4 | 0.1 µF | Through‑hole disc | Near MOSFET + supply rail |
 
-### 3.3 Flyback / clamp (fast release, DIY‑friendly)
+### 3.3 Flyback / clamp (DIY‑friendly)
+
 | Item | Qty | Example Part | Package | Notes |
 |---|---:|---|---|---|
-| Solenoid clamp TVS (SSA) | 1 | **1.5KE36CA** | Axial leaded | Bidirectional TVS across solenoid |
-| Solenoid clamp TVS (SSB) | 1 | 1.5KE36CA | Axial leaded |  |
-| Solenoid clamp TVS (TCC) | 1 | 1.5KE36CA | Axial leaded |  |
-| Solenoid clamp TVS (EPC) | 1 | **1.5KE36CA** (or higher power 5KP36CA) | Axial leaded | EPC is hardest‑working; consider 5KP series |
+| Solenoid clamp TVS (SSA) | 1 | **1.5KE36CA** | Axial leaded | Bidirectional TVS — fast response |
+| Solenoid clamp TVS (SSB) | 1 | 1.5KE36CA | Axial leaded | |
+| Solenoid clamp TVS (TCC) | 1 | 1.5KE36CA | Axial leaded | |
+| EPC flyback diode | 1 | **1N4001** (or 1N4007) | Axial leaded | Smoother pressure modulation |
+| EPC spike TVS (optional) | 1 | 1.5KE36CA | Axial leaded | Extra spike protection if needed |
 
-> Why TVS instead of a plain diode: a diode slows current decay and can cause “mushy” solenoid release and shift feel issues. TVS clamps faster.
+> **Why different flyback for EPC?**
+>
+> - **SSA/SSB/TCC** use TVS for fast current decay → crisp solenoid response
+> - **EPC** uses diode for slow current decay → smoother pressure modulation (matches MegaShift recommendation)
 
 ---
 
@@ -124,7 +129,8 @@ It covers the core controller plus a **4‑channel low‑side solenoid driver st
 - IRLZ44N (TO‑220): **4**
 - Gate resistors 100Ω: **4**
 - Gate pulldowns 100k: **4**
-- TVS for solenoids (1.5KE36CA): **4**
+- TVS for SSA/SSB/TCC (1.5KE36CA): **3**
+- EPC flyback diode (1N4001): **1**
 - 12V rail TVS (5KP58A): **1**
 - Bulk caps: **2–3**
 - 0.1µF caps: **6–12**
