@@ -68,6 +68,23 @@ Copy code
 - **README.md** – Project overview (this file)
 - **HARDWARE.md** – Electrical architecture, I/O, drivers
 - **FIRMWARE.md** – Control logic, state machines, safety rules
+- **TODO.md** – Current build plan and next steps
+
+---
+
+## Firmware Workspace
+
+Firmware sources and build config live in `firmware/`.
+
+- **PlatformIO** project targeting Teensy 4.1
+- Module layout under `firmware/src/` with headers in `firmware/include/`
+
+Build + upload (from repo root):
+
+```bash
+pio run -d firmware
+pio run -d firmware -t upload
+```
 
 ---
 

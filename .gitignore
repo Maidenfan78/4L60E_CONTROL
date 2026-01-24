@@ -38,6 +38,11 @@ Thumbs.db
 # Test coverage
 coverage/
 
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
 # Claude session documentation (local context only)
 claude/
 .claude/

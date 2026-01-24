@@ -138,6 +138,23 @@ All incoming commands are validated before use.
 
 ---
 
+## Repo Structure (Firmware)
+
+The firmware is organized as a PlatformIO project under `firmware/`.
+
+- `firmware/src/` – Implementation modules (state machine, EPC, VSS, TCC)
+- `firmware/include/` – Public headers and pin map (`board_config.h`)
+- `firmware/config/` – Build/runtime config headers
+
+Build + upload:
+
+```bash
+pio run -d firmware
+pio run -d firmware -t upload
+```
+
+---
+
 ## Guiding Principles
 
 - Deterministic behavior
