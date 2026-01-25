@@ -39,21 +39,20 @@ Gate ← Gate resistor ← Teensy pin
 4️⃣ MOSFET selection (do NOT cheap out)
 Recommended MOSFET (proven automotive choice)
 
-Infineon BSC010NE2LS5
+**STP36NF06L** (ST Microelectronics)
 
-40V
-
-Logic-level gate
-
-Very low Rds(on)
-
-Automotive qualified
+- 60V VDS
+- 30A ID (continuous)
+- 40mΩ RDS(on) max @ VGS=10V
+- Logic-level gate (VGS(th) 1.0–2.5V, 3.3V compatible)
+- Low gate charge (13–17nC)
+- **AEC-Q101 automotive qualified**
+- TO-220 package (hand-solderable)
 
 Good alternatives:
 
-IRLZ44N (old but works)
-
-IPB044N06L3
+- Infineon BSC010NE2LS5 (SMD)
+- IPB044N06L3
 
 ⚠️ Avoid random eBay MOSFETs.
 
@@ -78,7 +77,7 @@ Improves MOSFET longevity
 
 Use **bidirectional TVS** across solenoid:
 
-- Recommended: **1.5KE36CA** (36V clamp, axial) or SMBJ36CA (SMD)
+- Recommended: **5KP36CA** (36V clamp, 5000W peak pulse, axial) or SMBJ36CA (SMD)
 - Connection: Drain ─── TVS ─── +12V
 
 This allows:
@@ -97,7 +96,7 @@ Use a **diode** (e.g., **1N4001** or 1N4007) across the EPC solenoid:
 
 This matches MegaShift recommendations for "greater line pressure control."
 
-Optionally add a small TVS (1.5KE36CA) in parallel for spike protection.
+Optionally add a small TVS (5KP36CA) in parallel for spike protection.
 
 | Solenoid | Flyback Type | Reason                        |
 |----------|--------------|-------------------------------|
@@ -185,10 +184,10 @@ Decoupling
 
 11️⃣ Full driver channel BOM (per solenoid)
 Part	Value
-MOSFET	Infineon BSC010NE2LS5
+MOSFET	STP36NF06L (TO-220)
 Gate resistor	100 Ω
 Gate pulldown	100 kΩ
-Flyback TVS	SMBJ36CA
+Flyback TVS	5KP36CA (axial)
 Decoupling cap	0.1 µF
 Bulk cap	100 µF (shared rail)
 12️⃣ Wiring summary (Teensy → Driver)

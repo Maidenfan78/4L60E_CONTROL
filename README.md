@@ -8,7 +8,7 @@ All gear changes are commanded directly by the **T-bar range selector (1 / 2 / 3
 The system uses:
 - **Teensy 4.1** for real-time transmission control
 - **Raspberry Pi Zero 2 W** for logging, tuning, and remote access
-- **UART** communication between controller and logger
+- **UART** communication between controller and logger. CP2102 USB–TTL adapter
 
 This architecture prioritizes:
 - deterministic real-time behavior

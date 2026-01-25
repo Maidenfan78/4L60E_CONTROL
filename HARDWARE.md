@@ -75,7 +75,7 @@ All solenoids are driven via **automotive-rated low-side drivers**.
   (from MS3, analog 0–5V or CAN)
 - **Brake Switch**
 
-### Strongly Recommended
+### Strongly Recommended. These are 100% confirmed to be included.
 - **Transmission Temperature Sensor**
 - **Engine RPM** (from MS3)
 - **Pressure switch manifold** (gear confirmation diagnostics)
@@ -153,6 +153,14 @@ Watchdog / Enable (optional)	Pin 11	Digital IN	Optional safety input
 Range selector assumed to be decoded into discrete signals
 (preferred over analog decoding for reliability).
 
+Pressure Switch Manifold (Gear Confirmation)
+Function	Teensy Pin	Type	Notes
+Pressure Switch A	Pin 20	Digital IN	Pulled-up, active low
+Pressure Switch B	Pin 21	Digital IN	Pulled-up, active low
+Pressure Switch C	Pin 22	Digital IN	Pulled-up, active low
+
+Used for gear confirmation diagnostics and fault detection.
+
 Analog Inputs
 Function	Teensy Pin	ADC	Notes
 TPS (from MS3)	A0 (Pin 14)	ADC1	0–5V scaled to 3.3V
@@ -203,7 +211,7 @@ SSA/SSB OFF corresponds to a 3rd-gear command; this is the defined failsafe gear
 Pin Usage Summary
 Category	Pins Used
 Digital Outputs	2, 3, 4, 5
-Digital Inputs	6–11
+Digital Inputs	6–11, 20–22
 Analog Inputs	14–16
 Interrupt Inputs	18, 19
 UART	0, 1

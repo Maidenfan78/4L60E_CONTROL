@@ -45,7 +45,7 @@
 - [x] Finalize solenoid driver schematic and BOM
 - [ ] Build driver board prototype
 - [ ] Confirm pin mapping against Teensy 4.1 layout
-- [ ] Decide VSS conditioning (VR → LM1815 or Hall → direct)
+- [ ] Decide VSS conditioning (VR → LM2903N comparator or Hall → direct)
 - [ ] Power protection (TVS, reverse polarity, fusing)
 
 ## Tooling

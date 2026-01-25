@@ -16,7 +16,7 @@ It covers the core controller plus a **4‑channel low‑side solenoid driver st
 |---|---:|---|---|---|
 | Real‑time controller | 1 | **Teensy 4.1** | Module | Main TCM controller |
 | Logging / UI (optional) | 1 | **Raspberry Pi Zero 2 W** | Module | Optional; Teensy must run standalone |
-| UART level | 1 | (none) | — | Teensy↔Pi is **3.3V TTL**; keep wiring short, twisted if possible |
+| UART level | 1 | (none) | — | Teensy↔Pi is **3.3V TTL**; keep wiring short, twisted if possible 2× CP2102 USB–TTL adapters|
 | USB cable (bench) | 1 | USB‑A → Micro‑B | — | Firmware upload + bench debug |
 
 ---
@@ -42,10 +42,10 @@ It covers the core controller plus a **4‑channel low‑side solenoid driver st
 ### 3.1 MOSFETs (hand‑solderable)
 | Item | Qty | Example Part | Package | Notes |
 |---|---:|---|---|---|
-| Low‑side MOSFET (SSA) | 1 | **IRLZ44N** | TO‑220 | Logic‑level, common, easy to mount |
-| Low‑side MOSFET (SSB) | 1 | IRLZ44N | TO‑220 |  |
-| Low‑side MOSFET (TCC) | 1 | IRLZ44N | TO‑220 | TCC can draw more; TO‑220 is fine with copper/heatsink |
-| Low‑side MOSFET (EPC/PCS PWM) | 1 | IRLZ44N (or IRLZ34N / IRLZ48N) | TO‑220 | EPC runs PWM continuously—**heatsink recommended** |
+| Low‑side MOSFET (SSA) | 1 | **STP36NF06L** | TO‑220 | Logic‑level, AEC-Q101 automotive qualified |
+| Low‑side MOSFET (SSB) | 1 | STP36NF06L | TO‑220 | 60V, 30A, 40mΩ RDS(on) |
+| Low‑side MOSFET (TCC) | 1 | STP36NF06L | TO‑220 | Low gate charge (13-17nC) for fast switching |
+| Low‑side MOSFET (EPC/PCS PWM) | 1 | STP36NF06L | TO‑220 | EPC runs PWM continuously—**heatsink recommended** |
 | Heatsinks (EPC at minimum) | 1–2 | TO‑220 clip‑on or bolt‑on heatsink | — | Use thermal pad/grease as needed |
 | Insulators (if shared heatsink) | 1 set | TO‑220 mica/silicone pads + shoulder washers | — | Only if multiple MOSFETs share one heatsink |
 
@@ -60,11 +60,11 @@ It covers the core controller plus a **4‑channel low‑side solenoid driver st
 
 | Item | Qty | Example Part | Package | Notes |
 |---|---:|---|---|---|
-| Solenoid clamp TVS (SSA) | 1 | **1.5KE36CA** | Axial leaded | Bidirectional TVS — fast response |
-| Solenoid clamp TVS (SSB) | 1 | 1.5KE36CA | Axial leaded | |
-| Solenoid clamp TVS (TCC) | 1 | 1.5KE36CA | Axial leaded | |
+| Solenoid clamp TVS (SSA) | 1 | **5KP36CA** | Axial leaded | Bidirectional TVS — 5000W peak pulse power |
+| Solenoid clamp TVS (SSB) | 1 | 5KP36CA | Axial leaded | 36V standoff, fast response |
+| Solenoid clamp TVS (TCC) | 1 | 5KP36CA | Axial leaded | |
 | EPC flyback diode | 1 | **1N4001** (or 1N4007) | Axial leaded | Smoother pressure modulation |
-| EPC spike TVS (optional) | 1 | 1.5KE36CA | Axial leaded | Extra spike protection if needed |
+| EPC spike TVS (optional) | 1 | 5KP36CA | Axial leaded | Extra spike protection if needed |
 
 > **Why different flyback for EPC?**
 >
@@ -77,15 +77,17 @@ It covers the core controller plus a **4‑channel low‑side solenoid driver st
 
 | Input | Qty | Example Part | Package | Notes |
 |---|---:|---|---|---|
-| Brake input protection | 1 | 1N4148 + 10k pullup/down resistors | Axial leaded | Simple protection + configurable polarity |
-| Brake opto isolator (optional) | 1 | **PC817** | DIP‑4 | Extra noise isolation if needed |
+| Brake input protection | 1 | 10k/20k divider (12V) or 10k pullup (gnd-switched) + 1N4148 clamp | Axial leaded | No opto needed if MS3 brake works reliably |
 | Range selector inputs | 4 | 10k pullups + 0.1 µF RC (optional) | Axial/TH | Debounce/noise filter |
 | Schmitt trigger buffer (optional) | 1 | **74HC14** | DIP‑14 | Cleans noisy switch/tach signals; 6 inverting buffers |
-| TPS scaling (0–5V → 0–3.3V) | 1 | Resistor divider (e.g., 10k/20k) | Axial | Keep source impedance reasonable; add 0.1 µF to ground |
-| TPS buffer op‑amp (optional) | 1 | **LM358** | DIP‑8 | Only if you need input buffering |
-| VSS VR conditioner (recommended) | 1 | **LM1815N** | DIP‑8 | Classic VR conditioner in a DIY package |
-| VSS protection | 2–4 | 1N4148 / 1N4007 + resistors | Axial | Input clamp + series resistor before LM1815 |
-| Optional pressure switch inputs | up to 3 | 10k pullups + input protection | Axial | Great for sanity checks |
+| TPS scaling (0–5V → 0–3.3V) | 1 | 10k/20k resistor divider + 0.1 µF cap | Axial | No buffer needed; TPS can drive divider + MS3 simultaneously |
+| VSS VR conditioner | 1 | **LM2903N** | DIP‑8 | Dual comparator; needs external bias circuit (see notes below) |
+| VSS bias resistors | 3 | 10k, 10k, 100k (hysteresis) | Axial | Voltage divider + hysteresis for clean zero-cross |
+| VSS coupling cap | 1 | 0.1–1 µF film/ceramic | Through-hole | AC couples VR signal to comparator |
+| VSS protection | 2 | 1N4148 (back-to-back clamp) | Axial | Clamps VR spikes to safe levels |
+| Engine RPM input (from MS3) | 1 | 1k series + clamp diodes | Axial | Pin 19 interrupt; MS3 tach out is typically 0-5V square wave |
+| Trans temp pull-up | 1 | 2.2k–4.7k resistor | Axial | For NTC thermistor on A1 (Pin 15) |
+| Pressure switch manifold | 3 | 10k pullups + 1N4148 clamp | Axial | Gear confirmation (A/B/C switches) on Pins 20-22 |
 
 ---
 
@@ -119,31 +121,53 @@ It covers the core controller plus a **4‑channel low‑side solenoid driver st
 - Keep **power ground** (solenoids) and **sensor ground** separated and joined at a single star point.
 - Use **fuses**: one for logic, one for solenoids.
 - Put the **12V load‑dump TVS** as physically close to the 12V input as possible.
-- If your VSS is Hall (not VR), you can skip LM1815 and use a simple pullup + Schmitt input approach.
+- If your VSS is Hall (not VR), you can skip the LM2903N and use a simple pullup + Schmitt input approach.
+
+### LM2903N VR Conditioner Circuit
+
+```text
+VR sensor (+) ──┬── 0.1µF ──┬──────────┬─── LM2903 IN+ (pin 3)
+                │           │          │
+              clamp       10k        100k (hysteresis)
+              diodes       │          │
+                │          ├── 2.5V ──┴─── LM2903 OUT (pin 1) ─── to Teensy
+VR sensor (-) ──┴──────────┴── GND
+
+                           10k
+               5V ────────┬────── LM2903 IN- (pin 2) ── 2.5V ref
+                          │
+                         10k
+                          │
+                         GND
+```
+
+- The 10k/10k divider sets a 2.5V threshold at IN-
+- VR signal AC-couples through 0.1µF to IN+
+- 100k hysteresis resistor prevents output chatter near zero-cross
+- Back-to-back 1N4148 diodes clamp VR spikes to safe levels
+- Output is 0V/5V square wave at VSS frequency
 
 ---
 
 ## 8) Quick quantity summary (core build)
 
 - Teensy 4.1: **1**
-- IRLZ44N (TO‑220): **4**
+- STP36NF06L (TO‑220): **4**
 - Gate resistors 100Ω: **4**
 - Gate pulldowns 100k: **4**
-- TVS for SSA/SSB/TCC (1.5KE36CA): **3**
+- TVS for SSA/SSB/TCC (5KP36CA): **3**
 - EPC flyback diode (1N4001): **1**
 - 12V rail TVS (5KP58A): **1**
 - Bulk caps: **2–3**
 - 0.1µF caps: **6–12**
 - Buck modules (5V): **1–2**
-- LM1815N (VR conditioner): **1**
+- LM2903N (VR comparator): **1**
 - Deutsch DT connectors + pins/seals: **as needed**
 - Inline fuse holders: **2**
 
 **Optional signal conditioning:**
 
 - 74HC14 Schmitt trigger (DIP‑14): **1** (if noisy inputs)
-- PC817 opto isolator (DIP‑4): **1** (brake isolation)
-- LM358 op‑amp (DIP‑8): **1** (TPS buffering)
 
 ---
 

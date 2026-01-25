@@ -26,4 +26,9 @@ constexpr uint8_t kPinLinePressure = 16; // A2
 constexpr uint8_t kPinVSS = 18;
 constexpr uint8_t kPinRPM = 19;
 
+// Pressure switch manifold (gear confirmation)
+constexpr uint8_t kPinPressureSwitchA = 20;
+constexpr uint8_t kPinPressureSwitchB = 21;
+constexpr uint8_t kPinPressureSwitchC = 22;
+
 } // namespace hw
