@@ -19,7 +19,8 @@ It focuses on:
 | Shift Solenoid B (SSB) | 2–3 shifts | 20–40 Ω | ~0.5–0.8 A | On/Off |
 | 3–2 Control Solenoid | Coast downshift assist | 9–14 Ω | ~1.0–1.3 A | PWM |
 | EPC / PCS Solenoid | Line pressure control | **3.5–4.6 Ω** | **0–1.1 A** (0A=max pressure) | **PWM (critical)** |
-| TCC Solenoid | Torque converter lockup | 20–40 Ω | ~1.0–1.5 A | On/Off or PWM |
+| TCC Solenoid | Torque converter lockup (enable) | 20–40 Ω | ~1.0–1.5 A | On/Off |
+| TCC PWM Solenoid | Progressive converter clutch apply | 20–40 Ω | ~1.0 A | PWM |
 | LUF (if fitted) | Lockup feel modulation | ~10–15 Ω | ~1.0 A | PWM |
 
 **Notes**
@@ -91,7 +92,8 @@ This keeps tuning tables intuitive and matches MegaShift conventions.
 For **smoother pressure modulation**, use a **diode** (e.g., 1N4001) across the EPC solenoid.
 The slower current decay acts as a low-pass filter on pressure changes.
 
-For **SSA/SSB/TCC** (on/off solenoids), use **TVS** for faster response.
+For **SSA/SSB/TCC enable** (on/off solenoids), use **TVS** for faster response.
+For **TCC PWM**, use a **diode** (same as EPC) for smooth progressive apply.
 
 ---
 
@@ -162,7 +164,9 @@ These can be used as:
 - Use **delay timer before lockup** — prevents lock/unlock cycling
 - Hysteresis matters more than fancy logic
 - TCC must never fight EPC or gear changes
-- PWM lockup (if used) should ramp gently to avoid shudder
+- TCC PWM progressive apply ramps clutch pressure gently to avoid shudder
+- TCC enable (on/off) energises first, then TCC PWM ramps up
+- On unlock: TCC PWM drops to 0% immediately, then TCC enable turns off
 
 ---
 
@@ -183,7 +187,7 @@ These can be used as:
 - Default state on reset:
   - SSA OFF, SSB OFF (3rd gear — intentional GM limp mode)
   - max line pressure (0% EPC duty)
-  - TCC off
+  - TCC off (enable OFF, PWM 0%)
 - **0% EPC duty (max pressure) triggers:**
   - MCU reset / watchdog timeout
   - sensor loss (TPS, VSS)

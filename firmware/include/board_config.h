@@ -10,6 +10,7 @@ constexpr uint8_t kPinSSA = 2;
 constexpr uint8_t kPinSSB = 3;
 constexpr uint8_t kPinTCC = 4;
 constexpr uint8_t kPinEPC = 5;
+constexpr uint8_t kPinTCCPWM = 12;
 
 constexpr uint8_t kPinRange1 = 6;
 constexpr uint8_t kPinRange2 = 7;

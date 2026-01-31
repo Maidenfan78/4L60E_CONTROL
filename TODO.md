@@ -30,6 +30,8 @@
 - [ ] Delay timer before lockup (prevents cycling)
 - [ ] Throttle transient detection → unlock
 - [ ] Hysteresis on enable/disable thresholds
+- [ ] TCC PWM progressive apply (ramp duty on lockup request)
+- [ ] TCC PWM unlock sequence (PWM to 0% before enable OFF)
 
 ## Phase 5 — Hardening
 

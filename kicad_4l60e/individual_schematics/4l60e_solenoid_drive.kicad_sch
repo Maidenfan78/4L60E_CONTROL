@@ -1,0 +1,4120 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "bd46e578-295f-4181-af1d-3d3e27010a59")
+	(paper "A4")
+	(title_block
+		(title "4L60E Controller - Input Conditioning (Overview)")
+		(date "2026-01-26")
+		(rev "B")
+		(comment 1 "Input sheets listed below")
+	)
+	(lib_symbols
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:1N4001"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N4001"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "50V 1A General Purpose Rectifier Diode, DO-41"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?41*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "1N4001_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N4001_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "PCM_Diode_TVS_AKL:5KP36CA"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "5KP36CA"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "PCM_Diode_THT_AKL:D_P600_R-6_P12.70mm_Horizontal_TVS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.tme.eu/Document/b0b8a7828c27d2573ec8fa50f5c0ad4f/5KP-ser.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "P600 Bidirectional TVS Diode, 36V, 5000W, Alternate KiCAD Library"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode TVS bidirectional 5KP-CA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "5KP36CA_0_1"
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0.508 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy -2.54 1.27) (xy -2.54 -1.27) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -0.508 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy 2.54 -1.27) (xy 0 0) (xy 2.54 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "5KP36CA_0_2"
+				(polyline
+					(pts
+						(xy -3.81 -3.81) (xy 3.81 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -1.778) (xy -2.667 -0.889) (xy 0 0) (xy -0.889 -2.667) (xy -1.778 -1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.889 0.889) (xy -1.27 0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.889 0.889) (xy 0.889 -0.889)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.889 -0.889) (xy 1.27 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.778 1.778) (xy 2.667 0.889) (xy 0 0) (xy 0.889 2.667) (xy 1.778 1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "5KP36CA_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "5KP36CA_1_2"
+				(pin passive line
+					(at -3.81 -3.81 0)
+					(length 0)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 3.81 180)
+					(length 0)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "PCM_Transistor_MOSFET_AKL:STP36NF06L"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "STP36NF06L"
+				(at 5.08 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "PCM_Package_TO_SOT_THT_AKL:TO-220-3_Vertical_GDS"
+				(at 5.08 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.tme.eu/Document/4bf7bb992bce9158e582006752d774e6/STP36NF06L.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "TO-220 N-MOSFET enchancement mode transistor, 60V, 30A, 70W, Alternate KiCAD Library"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "enchancement mosfet nmosfet n-mosfet nmos n-mos emos emosfet STP36NF06L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "STP36NF06L_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 -1.27) (xy -2.54 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 2.54 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.1778)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "STP36NF06L_1_1"
+				(pin input line
+					(at -3.81 -1.27 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+12V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+12V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+12V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+12V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+12V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "To SSA solenoid"
+		(exclude_from_sim no)
+		(at 45.72 17.526 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "19857eab-d86d-4bfd-ad4b-a534c73c4140")
+	)
+	(text "Channel 1: \nSSA Shift solenoid A"
+		(exclude_from_sim no)
+		(at 55.118 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3f332b4f-65b7-45a5-92b7-c60a23e5a528")
+	)
+	(text "To Teensy_4.1 Pin 4"
+		(exclude_from_sim no)
+		(at 269.748 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "59af8ec7-37e3-470d-be1e-c45caabb7e17")
+	)
+	(text "Channel 3: \nTCC Torque Converter Clutch"
+		(exclude_from_sim no)
+		(at 237.998 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6b7bb59b-1d74-4317-8e1e-fda6475fd159")
+	)
+	(text "To Teensy_4.1 Pin 12"
+		(exclude_from_sim no)
+		(at 121.158 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6ba2de5f-a2ce-42f7-93ca-fb57a34509fb")
+	)
+	(text "To TCC solenoid"
+		(exclude_from_sim no)
+		(at 228.854 17.272 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9012e5ff-39a6-4956-a4db-24943348b67e")
+	)
+	(text "Channel 5: \nEPC Line Pressure PWM"
+		(exclude_from_sim no)
+		(at 208.788 157.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "93d06768-6583-4ac7-b00a-b4b6147556ec")
+	)
+	(text "To SSB solenoid"
+		(exclude_from_sim no)
+		(at 136.652 18.034 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a9918399-d019-4c0a-b58f-e289382bd70e")
+	)
+	(text "To Teensy_4.1 Pin 2"
+		(exclude_from_sim no)
+		(at 84.836 42.672 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b5398132-c9fb-440c-967c-3773875922d2")
+	)
+	(text "Channel 2: \nSSB Shift solenoid B"
+		(exclude_from_sim no)
+		(at 146.558 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c287536c-51ad-4009-b8e1-fe4c8e6de76d")
+	)
+	(text "To Teensy_4.1 Pin 5"
+		(exclude_from_sim no)
+		(at 245.11 125.984 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c6bc8af8-2f77-4b79-9546-b8562fd097d7")
+	)
+	(text "To EPC solenoid"
+		(exclude_from_sim no)
+		(at 199.898 103.632 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d1e34b79-61cd-4746-9395-f51d4dccb380")
+	)
+	(text "Channel 4: \nTCC PWM (Progressive Apply)"
+		(exclude_from_sim no)
+		(at 89.408 156.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d3e326f0-2d38-4ce6-8cb6-1447a9d59c88")
+	)
+	(text "To TCC PWM solenoid"
+		(exclude_from_sim no)
+		(at 80.264 101.092 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e994061b-f788-47e8-b474-aff8693d7733")
+	)
+	(text "To Teensy_4.1 Pin 3"
+		(exclude_from_sim no)
+		(at 178.308 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f34b29b9-76f5-40de-9414-9366ed0d3579")
+	)
+	(junction
+		(at 137.16 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1fc61073-68a1-4eb7-a575-b3557a2ab69c")
+	)
+	(junction
+		(at 140.97 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2a4099e5-2546-4e53-a41e-d2bd6b4424a3")
+	)
+	(junction
+		(at 92.71 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2c04843b-70a6-44e6-be9c-cc170a732113")
+	)
+	(junction
+		(at 241.3 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3d60f2aa-895f-4ed7-8a51-2ecc48540a24")
+	)
+	(junction
+		(at 199.39 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "75c1d7e2-a418-4ec8-abd9-74fa4378f7e1")
+	)
+	(junction
+		(at 212.09 125.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c26fb40a-df93-4278-91cf-8921a7c2d975")
+	)
+	(junction
+		(at 228.6 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c31aab73-5310-4bda-b88d-09c34eafc85b")
+	)
+	(junction
+		(at 45.72 29.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cccf6ae3-db15-4efc-ae3a-aded95193e2c")
+	)
+	(junction
+		(at 80.01 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cf2c07c1-fb62-4973-9e99-60fcbf0a11ec")
+	)
+	(junction
+		(at 58.42 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d6904924-9bb4-4786-a20a-48c3251dd23f")
+	)
+	(junction
+		(at 149.86 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "db978d5d-c6e6-4cf6-a104-99994aca6365")
+	)
+	(junction
+		(at 49.53 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e0b29e00-ee9e-48bb-9601-12384faa7f3c")
+	)
+	(junction
+		(at 203.2 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e2fd0b57-e39c-4702-bedc-35fe4f501fea")
+	)
+	(junction
+		(at 232.41 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e318b694-380a-4092-9c2c-ccf7e3c9dfb7")
+	)
+	(junction
+		(at 83.82 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ed0dda94-2ff1-4769-af29-b20a64e122be")
+	)
+	(wire
+		(pts
+			(xy 137.16 44.45) (xy 137.16 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "068ea924-1f19-4ee1-89c1-89171b1a5b2a")
+	)
+	(wire
+		(pts
+			(xy 80.01 128.27) (xy 80.01 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0831ec30-c2a2-46a5-8473-8b0002b1b62d")
+	)
+	(wire
+		(pts
+			(xy 73.66 39.37) (xy 80.01 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f78d412-87f2-4e1a-8a96-aee23f53f3fd")
+	)
+	(wire
+		(pts
+			(xy 212.09 125.73) (xy 212.09 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b17a17f-38dc-463a-a268-5a2b7b00c235")
+	)
+	(wire
+		(pts
+			(xy 45.72 114.3) (xy 64.77 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b29b7d8-79f9-4bca-a709-2dd41a198b41")
+	)
+	(wire
+		(pts
+			(xy 203.2 143.51) (xy 203.2 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d2ee874-db0b-438a-aa3f-86d43f5ee414")
+	)
+	(wire
+		(pts
+			(xy 58.42 54.61) (xy 58.42 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23f058b9-0814-4d39-a34d-f71423a5f57f")
+	)
+	(wire
+		(pts
+			(xy 49.53 57.15) (xy 49.53 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2be1d8ef-78c8-49d5-b5f9-3aa6ca533108")
+	)
+	(wire
+		(pts
+			(xy 45.72 114.3) (xy 45.72 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cbb4747-b877-4aaa-a1aa-c8726dd14137")
+	)
+	(wire
+		(pts
+			(xy 120.65 30.48) (xy 106.68 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "302f5174-3195-4342-95b8-c6b18be3ac65")
+	)
+	(wire
+		(pts
+			(xy 241.3 40.64) (xy 234.95 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "325550ec-025a-4643-8014-edca2b28b5f4")
+	)
+	(wire
+		(pts
+			(xy 49.53 57.15) (xy 45.72 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34cd3e79-6bb4-423f-ab16-3f326450bc38")
+	)
+	(wire
+		(pts
+			(xy 228.6 30.48) (xy 222.25 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37ef374c-d288-40fa-bb95-967e919a9f9d")
+	)
+	(wire
+		(pts
+			(xy 137.16 21.59) (xy 137.16 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38bb712d-d164-4d70-9e2e-27aeed44a0f8")
+	)
+	(wire
+		(pts
+			(xy 228.6 34.29) (xy 228.6 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39253290-8cc4-4eaa-ad52-45a0ac038160")
+	)
+	(wire
+		(pts
+			(xy 80.01 114.3) (xy 80.01 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c372ee2-fd03-4a1b-be75-0642b37f2f9e")
+	)
+	(wire
+		(pts
+			(xy 83.82 142.24) (xy 83.82 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d36def6-55d9-4066-a6bb-8cdb17d69a52")
+	)
+	(wire
+		(pts
+			(xy 227.33 125.73) (xy 233.68 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d61f679-d1bb-47cf-acfc-777aad511582")
+	)
+	(wire
+		(pts
+			(xy 212.09 143.51) (xy 203.2 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fe1f812-0f1d-4331-a774-9fac5f44ff19")
+	)
+	(wire
+		(pts
+			(xy 149.86 58.42) (xy 140.97 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40903cbf-7d59-41b8-bdcb-4f785ba8a34a")
+	)
+	(wire
+		(pts
+			(xy 228.6 21.59) (xy 228.6 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42ee7731-74b7-429b-959d-bd43f64ac6da")
+	)
+	(wire
+		(pts
+			(xy 92.71 142.24) (xy 83.82 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5043bd19-a51d-473a-bce0-951e7179e613")
+	)
+	(wire
+		(pts
+			(xy 149.86 55.88) (xy 149.86 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "523d5569-5555-4b90-a115-a94568a0c832")
+	)
+	(wire
+		(pts
+			(xy 212.09 125.73) (xy 205.74 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56e4a098-b2da-4b1a-9485-3e354bd080ac")
+	)
+	(wire
+		(pts
+			(xy 29.21 29.21) (xy 15.24 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "599daf37-b59d-4e05-8795-d7643e39ebe6")
+	)
+	(wire
+		(pts
+			(xy 66.04 39.37) (xy 58.42 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59bc60f2-857b-4cd6-a8ad-c774007c4463")
+	)
+	(wire
+		(pts
+			(xy 45.72 33.02) (xy 45.72 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59f9341b-c68f-46b7-9f38-4d2776d8fc24")
+	)
+	(wire
+		(pts
+			(xy 107.95 124.46) (xy 114.3 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "608d530e-b6e6-44e6-aa34-dea16d420d9f")
+	)
+	(wire
+		(pts
+			(xy 199.39 106.68) (xy 199.39 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60e89be7-c053-4393-bdb0-6660853104aa")
+	)
+	(wire
+		(pts
+			(xy 157.48 40.64) (xy 149.86 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66fb6ea3-b2fb-4636-946b-42122205cdd9")
+	)
+	(wire
+		(pts
+			(xy 149.86 40.64) (xy 149.86 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d45d125-bd08-43c3-a4fa-6ef0ddd3b9b9")
+	)
+	(wire
+		(pts
+			(xy 175.26 115.57) (xy 175.26 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e15adcb-6c36-44be-af94-6bd65dc21b70")
+	)
+	(wire
+		(pts
+			(xy 137.16 34.29) (xy 137.16 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e76de08-8278-4240-9d72-b3f90dbac8a0")
+	)
+	(wire
+		(pts
+			(xy 241.3 55.88) (xy 241.3 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70753795-f5d7-416f-b961-68927a05f46e")
+	)
+	(wire
+		(pts
+			(xy 45.72 29.21) (xy 39.37 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71e4011c-32bd-475d-a878-572f046abc82")
+	)
+	(wire
+		(pts
+			(xy 106.68 30.48) (xy 106.68 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a6d3978-52d8-46c4-8fab-2aacc614a18e")
+	)
+	(wire
+		(pts
+			(xy 228.6 44.45) (xy 228.6 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c41fdb8-20b5-48cd-a512-4262b7978f65")
+	)
+	(wire
+		(pts
+			(xy 58.42 57.15) (xy 49.53 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ca1739c-9e56-422d-b731-43539e63899c")
+	)
+	(wire
+		(pts
+			(xy 194.31 30.48) (xy 194.31 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d0e0bba-b93f-4f0f-9a4e-4ba380ff9b19")
+	)
+	(wire
+		(pts
+			(xy 232.41 58.42) (xy 232.41 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f0e04e9-ebc4-4bcd-87ac-fc56cd22be46")
+	)
+	(wire
+		(pts
+			(xy 256.54 40.64) (xy 262.89 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "823bd459-583a-4279-8279-701ec42cc454")
+	)
+	(wire
+		(pts
+			(xy 232.41 58.42) (xy 228.6 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "879b7d37-db18-4400-b2ad-d22f1c0fd7dd")
+	)
+	(wire
+		(pts
+			(xy 140.97 58.42) (xy 140.97 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97d9966c-147a-4ba7-b855-b3b7991ad2a5")
+	)
+	(wire
+		(pts
+			(xy 92.71 139.7) (xy 92.71 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bbd2c88-398b-4f6c-859c-642ca5662c1d")
+	)
+	(wire
+		(pts
+			(xy 80.01 105.41) (xy 80.01 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e352b5a-8730-48de-8939-08acab3ff428")
+	)
+	(wire
+		(pts
+			(xy 58.42 39.37) (xy 58.42 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f571263-de44-4059-9c41-7536f99ec9f4")
+	)
+	(wire
+		(pts
+			(xy 45.72 43.18) (xy 45.72 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fa569b2-d980-4f0f-9671-c58823909804")
+	)
+	(wire
+		(pts
+			(xy 194.31 30.48) (xy 212.09 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fe0904c-fe85-4e12-9b28-fbc88571b63c")
+	)
+	(wire
+		(pts
+			(xy 184.15 115.57) (xy 175.26 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a35da8f3-1e0d-4f4b-95cd-55bd64853f6d")
+	)
+	(wire
+		(pts
+			(xy 15.24 29.21) (xy 15.24 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5cc6fbf-137e-483d-b217-1eacabf1e33f")
+	)
+	(wire
+		(pts
+			(xy 199.39 129.54) (xy 199.39 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a707da3b-b5b1-490b-aa4b-3349d8defef1")
+	)
+	(wire
+		(pts
+			(xy 149.86 40.64) (xy 143.51 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa68c9bd-1da7-48e8-82d4-fb59f901f55e")
+	)
+	(wire
+		(pts
+			(xy 45.72 20.32) (xy 45.72 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad3ca03b-dc94-41d0-96a2-8132ebb96eac")
+	)
+	(wire
+		(pts
+			(xy 165.1 40.64) (xy 171.45 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb35a741-a28b-4563-92bb-2b80729d9752")
+	)
+	(wire
+		(pts
+			(xy 248.92 40.64) (xy 241.3 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0498368-9d2e-4193-9962-b885b8e77a2f")
+	)
+	(wire
+		(pts
+			(xy 92.71 124.46) (xy 86.36 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7ca5fc9-8010-490b-bc3a-082231b5919a")
+	)
+	(wire
+		(pts
+			(xy 241.3 40.64) (xy 241.3 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8788e71-6a74-4da5-817a-be28882e6879")
+	)
+	(wire
+		(pts
+			(xy 92.71 124.46) (xy 92.71 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8ced21d-f6f4-4dfd-8b24-6923f7b9d990")
+	)
+	(wire
+		(pts
+			(xy 199.39 115.57) (xy 199.39 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca27a9cd-1136-43df-b7c3-ac4b53f8ffcb")
+	)
+	(wire
+		(pts
+			(xy 203.2 143.51) (xy 199.39 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1c9ac12-e800-43c5-9185-40b1164d8de3")
+	)
+	(wire
+		(pts
+			(xy 137.16 30.48) (xy 130.81 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d39f965c-3f5f-4d1a-b8a7-111f07598b39")
+	)
+	(wire
+		(pts
+			(xy 72.39 114.3) (xy 80.01 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3a56623-0422-472a-874f-dc8c2db32c7c")
+	)
+	(wire
+		(pts
+			(xy 100.33 124.46) (xy 92.71 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df50daa4-0e70-4ffe-aba0-39bcad8af157")
+	)
+	(wire
+		(pts
+			(xy 219.71 125.73) (xy 212.09 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1bb565e-e0f5-45bd-ae43-84beb8b338de")
+	)
+	(wire
+		(pts
+			(xy 212.09 140.97) (xy 212.09 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e426874e-b076-4dd1-95c4-87700d6866ab")
+	)
+	(wire
+		(pts
+			(xy 83.82 142.24) (xy 80.01 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5cacebc-991d-411e-8faf-c89a4baafa76")
+	)
+	(wire
+		(pts
+			(xy 241.3 58.42) (xy 232.41 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7dad87e-a830-4478-acaa-583edafdbb0c")
+	)
+	(wire
+		(pts
+			(xy 58.42 39.37) (xy 52.07 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efaa2c4b-f209-4539-99cf-d3bd54d4973d")
+	)
+	(wire
+		(pts
+			(xy 140.97 58.42) (xy 137.16 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe9c7654-9efb-41ed-9fce-7aaa3a07edb3")
+	)
+	(wire
+		(pts
+			(xy 191.77 115.57) (xy 199.39 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "feff41b7-6ba7-414a-92f2-dcc24a184cfd")
+	)
+	(symbol
+		(lib_id "PCM_Diode_TVS_AKL:5KP36CA")
+		(at 217.17 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "080c9fe0-44ec-447e-8348-b1058ae4ee61")
+		(property "Reference" "D5"
+			(at 217.17 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5KP36CA"
+			(at 217.17 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_Diode_THT_AKL:D_P600_R-6_P12.70mm_Horizontal_TVS"
+			(at 217.17 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tme.eu/Document/b0b8a7828c27d2573ec8fa50f5c0ad4f/5KP-ser.pdf"
+			(at 217.17 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P600 Bidirectional TVS Diode, 36V, 5000W, Alternate KiCAD Library"
+			(at 217.17 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "adb389c6-c83e-4f55-befc-a145db109568")
+		)
+		(pin "2"
+			(uuid "bb803c1a-7ccb-4d25-90f9-5a7edd37e24a")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 45.72 119.38 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0d7bc227-20a0-4b57-ae36-09dc0a8b42d7")
+		(property "Reference" "#PWR02"
+			(at 45.72 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 45.72 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 45.72 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 45.72 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7b3d95e2-da37-4af2-aee2-223bfea68c46")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 252.73 40.64 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0e558ec5-5bf1-4457-881f-79928712df1b")
+		(property "Reference" "R10"
+			(at 252.222 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 252.222 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 252.73 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 252.73 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 252.73 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a32014de-87e3-4f75-a0df-dca9813095a9")
+		)
+		(pin "2"
+			(uuid "ce2cec35-b5cb-4005-9a5d-1f0469af1a05")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 194.31 35.56 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "15ce79b7-b700-40cd-8583-8440cada5864")
+		(property "Reference" "#PWR08"
+			(at 194.31 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 194.31 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 194.31 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2fb21382-e843-47c9-a475-dd30acad7876")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 83.82 146.05 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1d9d87da-fdf1-4076-8de1-73b6809634d9")
+		(property "Reference" "#PWR04"
+			(at 83.82 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 83.82 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 83.82 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc3355a5-cd0c-4e08-b481-3ad28945d736")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 223.52 125.73 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2361014e-e0de-46ca-b003-446bd095f34f")
+		(property "Reference" "R8"
+			(at 223.266 123.444 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 223.266 120.904 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 223.52 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 223.52 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 223.52 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fefc28c7-2f58-4f2b-976f-2c9d5ea72a97")
+		)
+		(pin "2"
+			(uuid "6c98ddea-78dc-462b-bdc4-ceff2c9445e2")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 175.26 120.65 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2c4eabf1-6697-457a-b052-a96e4933c6fe")
+		(property "Reference" "#PWR07"
+			(at 175.26 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 175.26 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 175.26 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 175.26 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6951dc40-7b7b-496e-8a03-a7e7d3971f10")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 49.53 60.96 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34cd374e-a90d-45f3-aa96-ea38f645142b")
+		(property "Reference" "#PWR03"
+			(at 49.53 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 49.53 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 49.53 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e20e5ef1-0802-4aa6-9abb-ab8dc0cd1830")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Transistor_MOSFET_AKL:STP36NF06L")
+		(at 82.55 123.19 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3909e4a5-005a-4d08-8596-e6ad2b08da5b")
+		(property "Reference" "Q2"
+			(at 76.2 121.9199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STP36NF06L"
+			(at 76.2 124.4599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Package_TO_SOT_THT_AKL:TO-220-3_Vertical_GDS"
+			(at 77.47 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tme.eu/Document/4bf7bb992bce9158e582006752d774e6/STP36NF06L.pdf"
+			(at 82.55 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "TO-220 N-MOSFET enchancement mode transistor, 60V, 30A, 70W, Alternate KiCAD Library"
+			(at 82.55 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "012bc57c-d06f-4cf4-ad6a-7b605ee517f2")
+		)
+		(pin "3"
+			(uuid "31034c96-0af7-4519-bc71-f1196fd64f89")
+		)
+		(pin "2"
+			(uuid "de2f56d6-6739-4f7c-b2d6-4173d823dcc4")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 104.14 124.46 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "40424bac-08e4-4fc4-b2f4-9f03d6d1a1b4")
+		(property "Reference" "R4"
+			(at 103.632 121.666 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 103.632 118.872 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 104.14 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 104.14 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 104.14 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a59446e6-d80d-495b-806d-bb7e694f7531")
+		)
+		(pin "2"
+			(uuid "ebeaf4be-39ea-4b4f-be07-d56e399f2136")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 69.85 39.37 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "49f2fd31-5126-45a3-aeb9-34ecb502436e")
+		(property "Reference" "R2"
+			(at 69.85 37.084 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 69.85 34.544 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 69.85 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "32ae7438-4810-470a-893a-25fb53e5b97c")
+		)
+		(pin "2"
+			(uuid "e162a037-8ace-4245-8d0f-c0743e26821c")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 140.97 62.23 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4c4676a5-3b77-4c9f-ba84-37131514f9c0")
+		(property "Reference" "#PWR06"
+			(at 140.97 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 140.97 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 140.97 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 140.97 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "db0d4c09-4887-4f77-b5bb-3378507515b6")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Transistor_MOSFET_AKL:STP36NF06L")
+		(at 48.26 38.1 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "547d223d-98b3-41d7-acda-1a6f369e0641")
+		(property "Reference" "Q1"
+			(at 41.91 36.8299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STP36NF06L"
+			(at 41.91 39.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Package_TO_SOT_THT_AKL:TO-220-3_Vertical_GDS"
+			(at 43.18 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tme.eu/Document/4bf7bb992bce9158e582006752d774e6/STP36NF06L.pdf"
+			(at 48.26 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "TO-220 N-MOSFET enchancement mode transistor, 60V, 30A, 70W, Alternate KiCAD Library"
+			(at 48.26 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0567dc60-27cb-485a-bb80-7fb1edd740cf")
+		)
+		(pin "3"
+			(uuid "87867414-cd08-4e8d-8481-f54c3d8e1a45")
+		)
+		(pin "2"
+			(uuid "8dcb9547-d8c6-454d-bf38-225a1d121e66")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Transistor_MOSFET_AKL:STP36NF06L")
+		(at 231.14 39.37 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "59162606-0330-4747-b283-42a2e665f99b")
+		(property "Reference" "Q5"
+			(at 224.79 38.0999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STP36NF06L"
+			(at 224.79 40.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Package_TO_SOT_THT_AKL:TO-220-3_Vertical_GDS"
+			(at 226.06 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tme.eu/Document/4bf7bb992bce9158e582006752d774e6/STP36NF06L.pdf"
+			(at 231.14 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "TO-220 N-MOSFET enchancement mode transistor, 60V, 30A, 70W, Alternate KiCAD Library"
+			(at 231.14 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8fd86200-c3df-4d0a-b5d0-56c54d49f7c4")
+		)
+		(pin "3"
+			(uuid "d473b362-7be1-4ede-8ec4-afd6348347f4")
+		)
+		(pin "2"
+			(uuid "da245383-11a9-4c3f-9bcd-d361c6a05580")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4001")
+		(at 68.58 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5d146f57-ddc0-4000-92a4-bd98e8230f3d")
+		(property "Reference" "D2"
+			(at 68.58 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4001"
+			(at 68.58 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 68.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf"
+			(at 68.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "50V 1A General Purpose Rectifier Diode, DO-41"
+			(at 68.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 68.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 68.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a42a714d-7abf-49a3-9259-189d222e24d5")
+		)
+		(pin "1"
+			(uuid "09d6a755-19a3-4208-a95e-3108a1257e5a")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 92.71 135.89 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5ee36217-7fe1-4134-a85e-62e04e4e8781")
+		(property "Reference" "R3"
+			(at 90.17 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 90.17 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.71 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 92.71 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cf34afa7-080a-42b2-813f-b8af155c67be")
+		)
+		(pin "2"
+			(uuid "66b346a1-4bf7-4078-a8c0-14a93012f54a")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 161.29 40.64 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "63062859-6899-4dca-9afb-aea8e3064ba5")
+		(property "Reference" "R6"
+			(at 160.782 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 160.782 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5707e98b-713a-4a6d-abdd-b0ef145e1cbf")
+		)
+		(pin "2"
+			(uuid "73c1d78e-19b1-4590-a0a0-4738aef70846")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Transistor_MOSFET_AKL:STP36NF06L")
+		(at 139.7 39.37 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7c64a9b4-40c2-4cb4-b575-9d8464145161")
+		(property "Reference" "Q3"
+			(at 133.35 38.0999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STP36NF06L"
+			(at 133.35 40.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Package_TO_SOT_THT_AKL:TO-220-3_Vertical_GDS"
+			(at 134.62 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tme.eu/Document/4bf7bb992bce9158e582006752d774e6/STP36NF06L.pdf"
+			(at 139.7 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "TO-220 N-MOSFET enchancement mode transistor, 60V, 30A, 70W, Alternate KiCAD Library"
+			(at 139.7 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "15d0c6a5-afd8-40a7-ba2a-cfeb1e48df50")
+		)
+		(pin "3"
+			(uuid "cf6ec6c3-8dcf-4c34-b1c0-bc40a896624a")
+		)
+		(pin "2"
+			(uuid "ed8a3612-dd94-4832-bb7d-6e771b615085")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 203.2 147.32 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87af0fc4-cebf-4e06-b794-c0b1ef71030a")
+		(property "Reference" "#PWR09"
+			(at 203.2 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 203.2 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 203.2 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "27f9ca58-30e0-4042-bd07-133bccbd774a")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 149.86 52.07 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "87b8e07e-a04c-4858-9c60-280b7bf20c98")
+		(property "Reference" "R5"
+			(at 147.32 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 147.32 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 149.86 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2f106944-e7cd-43f5-9d1b-0fa9154f43d3")
+		)
+		(pin "2"
+			(uuid "93d41b2f-68c9-4094-b3a1-99d20d98316f")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Diode_TVS_AKL:5KP36CA")
+		(at 34.29 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "99bfb6a6-b8d7-451f-b419-5535d9c0576e")
+		(property "Reference" "D1"
+			(at 34.29 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5KP36CA"
+			(at 34.29 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_Diode_THT_AKL:D_P600_R-6_P12.70mm_Horizontal_TVS"
+			(at 34.29 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tme.eu/Document/b0b8a7828c27d2573ec8fa50f5c0ad4f/5KP-ser.pdf"
+			(at 34.29 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P600 Bidirectional TVS Diode, 36V, 5000W, Alternate KiCAD Library"
+			(at 34.29 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4263aad9-8102-439b-886b-2b658598233c")
+		)
+		(pin "2"
+			(uuid "98487811-8943-420e-9d1c-c8f084006d86")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Transistor_MOSFET_AKL:STP36NF06L")
+		(at 201.93 124.46 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9d8ddbd8-0552-48a4-90b8-10b0c2883d77")
+		(property "Reference" "Q4"
+			(at 195.58 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "STP36NF06L"
+			(at 195.58 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Package_TO_SOT_THT_AKL:TO-220-3_Vertical_GDS"
+			(at 196.85 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tme.eu/Document/4bf7bb992bce9158e582006752d774e6/STP36NF06L.pdf"
+			(at 201.93 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "TO-220 N-MOSFET enchancement mode transistor, 60V, 30A, 70W, Alternate KiCAD Library"
+			(at 201.93 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3b671cee-77f9-4142-a52f-65b80b933bce")
+		)
+		(pin "3"
+			(uuid "53ca0a72-4e8d-4978-a36a-e35cf3a0cff0")
+		)
+		(pin "2"
+			(uuid "fc690b1d-258c-4f41-ad03-0393b8ada748")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 241.3 52.07 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a191c02d-0048-48c9-b847-7e06ded5086a")
+		(property "Reference" "R9"
+			(at 238.76 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 238.76 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 241.3 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 241.3 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c353e027-75a7-4f3e-a61c-8c9873f55535")
+		)
+		(pin "2"
+			(uuid "11b9fe1c-fbad-4432-a22d-ca74180716aa")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 106.68 35.56 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a874383e-e476-4196-a9aa-9acc256c1cda")
+		(property "Reference" "#PWR05"
+			(at 106.68 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 106.68 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 106.68 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fd7341e6-3bdb-4aea-8671-f7cb42844239")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N4001")
+		(at 187.96 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b02b5ff5-1bbc-4af1-aa77-34dd61be8825")
+		(property "Reference" "D4"
+			(at 187.96 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4001"
+			(at 187.96 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 187.96 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf"
+			(at 187.96 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "50V 1A General Purpose Rectifier Diode, DO-41"
+			(at 187.96 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 187.96 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 187.96 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d75b1b7b-4330-449d-bc97-cc6b3e1b194b")
+		)
+		(pin "1"
+			(uuid "52082a3a-a35c-4af8-a925-1c43dd24739f")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 232.41 62.23 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b548a472-c389-40a2-87ae-4037713b5176")
+		(property "Reference" "#PWR010"
+			(at 232.41 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 232.41 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 232.41 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "68d6c998-5707-4e21-8e3c-0045c8e1dbd1")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 212.09 137.16 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b54b13aa-3fa3-4d15-8604-9ce11faa77b6")
+		(property "Reference" "R7"
+			(at 209.55 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 209.55 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 212.09 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 212.09 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3e76736f-acce-4636-8227-3592ed6b159d")
+		)
+		(pin "2"
+			(uuid "d7532a8d-e61e-4649-b1d5-052cad0f9b9e")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 58.42 50.8 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd873232-1d98-4831-9c47-84adc1021653")
+		(property "Reference" "R1"
+			(at 55.88 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 55.88 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 58.42 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 58.42 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e6cf37e1-ac99-41fa-9afa-e438a8ea335d")
+		)
+		(pin "2"
+			(uuid "1e390c11-75bb-4eb3-a61a-a6435bde1b15")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 15.24 34.29 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cf9740e8-59b0-4dd7-939a-673bb3f0c582")
+		(property "Reference" "#PWR01"
+			(at 15.24 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 15.24 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 15.24 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 15.24 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 15.24 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "28eb7511-244b-4505-9f20-7c27f684325f")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Diode_TVS_AKL:5KP36CA")
+		(at 125.73 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f26e65de-513e-49a9-b995-4a673d42e442")
+		(property "Reference" "D3"
+			(at 125.73 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5KP36CA"
+			(at 125.73 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_Diode_THT_AKL:D_P600_R-6_P12.70mm_Horizontal_TVS"
+			(at 125.73 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tme.eu/Document/b0b8a7828c27d2573ec8fa50f5c0ad4f/5KP-ser.pdf"
+			(at 125.73 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P600 Bidirectional TVS Diode, 36V, 5000W, Alternate KiCAD Library"
+			(at 125.73 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "429c5ad4-d194-4c94-a0dd-e5cd823212bb")
+		)
+		(pin "2"
+			(uuid "1bc001fd-0b25-4d00-a221-005ab16fc080")
+		)
+		(instances
+			(project "4l60e_solenoid_drive"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

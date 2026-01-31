@@ -20,7 +20,8 @@ Survives load dump, inductive kick, noise
 Solenoid	Type	Control
 SSA	On/Off	Digital
 SSB	On/Off	Digital
-TCC	On/Off (or PWM optional)	Digital
+TCC	On/Off enable	Digital
+TCC PWM	PWM progressive apply	PWM (20-100 Hz)
 EPC / PCS	PWM, current-controlled-ish	Critical
 
 EPC current range: **0–1.1 A** (0A = max pressure, ~1.1A = min pressure), continuous PWM.
@@ -103,6 +104,7 @@ Optionally add a small TVS (5KP36CA) in parallel for spike protection.
 | SSA      | TVS          | Fast response for shifts      |
 | SSB      | TVS          | Fast response for shifts      |
 | TCC      | TVS          | Crisp lockup engagement       |
+| TCC PWM  | Diode        | Smooth progressive apply      |
 | EPC      | Diode (+TVS) | Smooth pressure modulation    |
 
 7️⃣ EPC PWM specifics (very important)
@@ -195,12 +197,13 @@ Signal	Teensy	Driver
 SSA	Pin 2	Gate via 100Ω
 SSB	Pin 3	Gate via 100Ω
 TCC	Pin 4	Gate via 100Ω
+TCC PWM	Pin 12 (PWM)	Gate via 100Ω
 EPC	Pin 5 (PWM)	Gate via 100Ω
 GND	GND	Power ground
 +12V	Vehicle	Solenoid feed
 13️⃣ Fail-safe behavior (designed in)
 Failure	Result
-MCU reset	SSA/SSB default to 3rd (both OFF — intentional GM limp mode), TCC OFF, EPC 0% duty
+MCU reset	SSA/SSB default to 3rd (both OFF — intentional GM limp mode), TCC OFF, TCC PWM 0%, EPC 0% duty
 EPC fault	Firmware forces 0% duty (max pressure)
 Pi crash	No effect
 Sensor loss	MAX pressure, no TCC

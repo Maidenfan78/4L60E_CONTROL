@@ -25,15 +25,13 @@ This document describes the electrical and hardware architecture of the transmis
 
 ## Power Architecture
 
-- Vehicle 12V supply
-- Automotive-rated buck converter(s)
+- Vehicle 12V supply (10V cranking to 14.7V charging, transients to 40V+)
+- Input protection: F1 (2A fuse) → D1 (VFT4045BP Schottky, reverse polarity) → TVS1 (P6KE18A, transient clamp)
 - Separate regulated outputs:
-  - Teensy 4.1 (5V / VIN)
-  - Raspberry Pi Zero 2 W (5V)
-- Required protections:
-  - Reverse polarity protection
-  - TVS diode on 12V input
-  - Crank brownout tolerance
+  - **PS1: OKI-78SR-5/1.5-W36E-C** → 5V / 1.5A → Teensy 4.1 VIN + line pressure sensor
+  - **PS2: DFR0831** → 5V / 4A → Raspberry Pi Zero 2 W (via GPIO header Pin 2/4)
+- Both converters need ≥7V input (≥7.4V at battery after Schottky drop)
+- Pi powered through GPIO header, not micro USB (bypasses polyfuse; F1 provides upstream protection)
 
 The Teensy must continue running if the Pi browns out or resets.
 
@@ -60,7 +58,8 @@ All solenoids are driven via **automotive-rated low-side drivers**.
 | SSA | Shift Solenoid A |
 | SSB | Shift Solenoid B |
 | EPC | Line pressure control (PWM) |
-| TCC | Torque converter clutch |
+| TCC | Torque converter clutch (on/off enable) |
+| TCC PWM | Progressive converter clutch apply (PWM) |
 
 > Solenoids must **never** be driven directly from MCU pins.
 
@@ -117,8 +116,8 @@ All solenoids are driven via **automotive-rated low-side drivers**.
 ## Signal Levels & Conditioning
 
 - **VSS**: VR sensors need a conditioner (comparator/zero-cross). Hall sensors can be direct with pull-up.
-- **TPS**: 0–5V must be scaled/buffered to 0–3.3V for Teensy ADC.
-- **Brake**: use a pull-up/pull-down and debounce in firmware.
+- **TPS / Line Pressure (0–5V)**: scale to 0–3.3V using a divider (e.g., 15k/24k) and add Schottky clamp diodes + a small series resistor at the MCU pin.
+- **Brake / 12V Inputs**: use a divider sized for 15V max (e.g., 47k/12k), plus series resistor and Schottky clamps to 3.3V/GND.
 
 ---
 
@@ -130,7 +129,8 @@ Digital Outputs (Solenoids)
 Function	Teensy Pin	Type	Notes
 Shift Solenoid A (SSA)	Pin 2	Digital OUT	Low-side driver input
 Shift Solenoid B (SSB)	Pin 3	Digital OUT	Low-side driver input
-Torque Converter Clutch (TCC)	Pin 4	Digital OUT / PWM (optional)	Usually on/off
+Torque Converter Clutch (TCC)	Pin 4	Digital OUT	On/off enable
+TCC PWM (Progressive Apply)	Pin 12	PWM OUT	Hardware PWM, smooth lockup
 EPC / PCS (Line Pressure)	Pin 5	PWM OUT	Hardware PWM, critical
 
 Why these pins
@@ -204,13 +204,14 @@ SSA	OFF	Prevent unintended shift
 SSB	OFF	Prevent unintended shift
 EPC	OFF (0% duty)	Max pressure (project assumption)
 TCC	OFF	Prevent stall
+TCC PWM	OFF (0% duty)	No progressive apply
 
 These defaults must be enforced in firmware AND hardware pull states.
 SSA/SSB OFF corresponds to a 3rd-gear command; this is the defined failsafe gear.
 
 Pin Usage Summary
 Category	Pins Used
-Digital Outputs	2, 3, 4, 5
+Digital Outputs	2, 3, 4, 5, 12
 Digital Inputs	6–11, 20–22
 Analog Inputs	14–16
 Interrupt Inputs	18, 19

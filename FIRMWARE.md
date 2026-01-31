@@ -12,7 +12,7 @@ It is responsible for:
 - Gear selection from range input
 - Solenoid control (SSA / SSB)
 - EPC (line pressure) PWM control
-- TCC control
+- TCC control (on/off enable + PWM progressive apply)
 - Downshift protection
 - Failsafe handling
 - Watchdog monitoring
@@ -128,6 +128,16 @@ Pressure 0% (min)   → EPC duty ~60% (hard ceiling)
 - Sensor fault
 - Throttle transient (rapid TPS change)
 
+### TCC PWM Progressive Apply
+
+The TCC PWM solenoid modulates converter clutch apply pressure for smooth lockup:
+
+- On lockup request, ramp TCC PWM duty from 0% up over ~500–1000 ms
+- TCC enable (on/off) is energised first, then TCC PWM ramps up
+- On unlock, TCC PWM drops to 0% immediately, then TCC enable turns off
+- PWM frequency: 20–100 Hz (same MOSFET driver topology as EPC, with diode flyback)
+- Failsafe: 0% TCC PWM duty = no progressive apply (converter stays unlocked)
+
 ### TCC Design Philosophy
 
 Per FuelTech practice: hysteresis and delays matter more than fancy logic. TCC must never fight EPC or gear changes. Conservative, delayed lockup is industry standard.
@@ -140,7 +150,7 @@ Per FuelTech practice: hysteresis and delays matter more than fancy logic. TCC m
 - Default output states on reset:
   - SSA OFF, SSB OFF → 3rd gear (intentional GM limp mode)
   - Max EPC pressure (0% duty)
-  - TCC unlocked
+  - TCC unlocked (enable OFF, PWM 0%)
 - VSS loss:
   - Lock out downshifts
   - Disable TCC
