@@ -21395,6 +21395,384 @@
 			)
 		)
 	)
+	(sheet
+		(at 516.89 265.43)
+		(size 48.26 45.72)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "317623d2-d5b4-4bc9-817d-80edcc969aa4")
+		(property "Sheetname" "EPC Driver"
+			(at 516.89 264.7184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "epc_driver.kicad_sch"
+			(at 516.89 311.7346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 488.95 29.21)
+		(size 49.53 50.8)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "4a9e45a6-74d0-47d3-a70b-56bb8eaf76b3")
+		(property "Sheetname" "Power Supply"
+			(at 488.95 28.4984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power_supply.kicad_sch"
+			(at 488.95 80.5946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 468.63 337.82)
+		(size 40.64 33.02)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "633340f3-bdd4-4acc-b8fd-e6216485c12c")
+		(property "Sheetname" "Comms"
+			(at 468.63 337.1084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "comms.kicad_sch"
+			(at 468.63 371.4246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 510.54 172.72)
+		(size 58.42 66.04)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6808e9b3-db95-4e56-8215-fe608f721ec7")
+		(property "Sheetname" "Inputs"
+			(at 510.54 172.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "inputs.kicad_sch"
+			(at 510.54 239.3446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 530.86 335.28)
+		(size 30.48 26.67)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "87ff86e1-142c-4726-9bac-e086d3eb3826")
+		(property "Sheetname" "Raspberry Pi Zero 2W"
+			(at 530.86 334.5684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "pi_zero_2w.kicad_sch"
+			(at 530.86 362.5346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 422.91 341.63)
+		(size 30.48 31.75)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "9407ad23-988f-44f9-b0e4-0827a4583b51")
+		(property "Sheetname" "Case Connectors"
+			(at 422.91 340.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "case_connectors.kicad_sch"
+			(at 422.91 373.9646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 449.58 262.89)
+		(size 45.72 46.99)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c5103635-ac7f-4f1d-b569-e855d983fe83")
+		(property "Sheetname" "Solenoid Drivers"
+			(at 449.58 262.1784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "solenoid_drivers.kicad_sch"
+			(at 449.58 310.4646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 412.75 264.16)
+		(size 26.67 39.37)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f89cd823-6dfb-4579-8ed1-1809ab3fbb8e")
+		(property "Sheetname" "Teensy 4.1"
+			(at 412.75 263.4484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "teensy_4.1.kicad_sch"
+			(at 412.75 304.1146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 490.22 110.49)
+		(size 48.26 49.53)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ff94dee7-0463-41e9-a66f-bbb4711e0383")
+		(property "Sheetname" "VSS VR Conditioner"
+			(at 490.22 109.7784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "vss_vr_conditioner.kicad_sch"
+			(at 490.22 160.6046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "kicad_4l60e"
+				(path "/bd46e578-295f-4181-af1d-3d3e27010a59"
+					(page "3")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

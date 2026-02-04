@@ -696,6 +696,42 @@
     [
       "bd46e578-295f-4181-af1d-3d3e27010a59",
       "Root"
+    ],
+    [
+      "6808e9b3-db95-4e56-8215-fe608f721ec7",
+      "Inputs"
+    ],
+    [
+      "ff94dee7-0463-41e9-a66f-bbb4711e0383",
+      "VSS VR Conditioner"
+    ],
+    [
+      "4a9e45a6-74d0-47d3-a70b-56bb8eaf76b3",
+      "Power Supply"
+    ],
+    [
+      "c5103635-ac7f-4f1d-b569-e855d983fe83",
+      "Solenoid Drivers"
+    ],
+    [
+      "317623d2-d5b4-4bc9-817d-80edcc969aa4",
+      "EPC Driver"
+    ],
+    [
+      "633340f3-bdd4-4acc-b8fd-e6216485c12c",
+      "Comms"
+    ],
+    [
+      "f89cd823-6dfb-4579-8ed1-1809ab3fbb8e",
+      "Teensy 4.1"
+    ],
+    [
+      "9407ad23-988f-44f9-b0e4-0827a4583b51",
+      "Case Connectors"
+    ],
+    [
+      "87ff86e1-142c-4726-9bac-e086d3eb3826",
+      "Raspberry Pi Zero 2W"
     ]
   ],
   "text_variables": {}

@@ -46,25 +46,29 @@ Failsafe behavior is **0% duty = max pressure**.
 
 ## High-Level Architecture
 
-MegaSquirt 3 ECU
-(TPS / RPM / CAN / Analog)
-|
-v
-| Teensy 4.1 (TCM / Controller) |
-| SSA / SSB | EPC PWM | TCC |
-| VSS | Safety | Watchdog |
-markdown
-Copy code
-        |
-     4L60-E
+```text
+MegaSquirt 3 ECU (TPS / RPM / CAN / Analog)
+            |
+            v
+Teensy 4.1 (TCM / Controller)
+- SSA / SSB
+- EPC PWM
+- TCC enable + TCC PWM
+- VSS capture
+- Safety + watchdog
+            |
+            v
+          4L60-E
 
-
-     UART
-        |
-| Raspberry Pi Zero 2 W (Logger) |
-| SSH | Logs | Config | UI |
-yaml
-Copy code
+      UART telemetry/config
+            |
+            v
+Raspberry Pi Zero 2 W (Logger/UI)
+- SSH
+- Logs
+- Config
+- (optional) UI
+```
 
 ---
 

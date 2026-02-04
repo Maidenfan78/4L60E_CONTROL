@@ -1,0 +1,11 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "3c56e4df-a0dc-4bdf-85db-48c7a8d9814f")
+	(paper "A4")
+	(title_block
+		(title "Raspberry Pi Zero 2W")
+	)
+	(lib_symbols)
+)

@@ -263,7 +263,7 @@
 	)
 	(text "PRESSURE SWITCH MANIFOLD (Pins 20/21/22)\nGear confirmation A/B/C\n10k pullups, ground-switched (active LOW)\nJ6: pin1=A, pin2=B, pin3=C, pin4=GND"
 		(exclude_from_sim no)
-		(at 126.492 51.054 0)
+		(at 122.174 58.928 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -284,7 +284,7 @@
 	)
 	(text "Pin A: TFP Switch 3"
 		(exclude_from_sim no)
-		(at 40.64 64.262 0)
+		(at 81.28 64.262 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -294,7 +294,7 @@
 	)
 	(text "To Teensy 4.1 Pin 21"
 		(exclude_from_sim no)
-		(at 127.762 74.168 0)
+		(at 127.762 72.898 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -304,7 +304,7 @@
 	)
 	(text "Pin A: TFP Switch 2"
 		(exclude_from_sim no)
-		(at 40.386 59.436 0)
+		(at 81.026 59.436 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -314,7 +314,7 @@
 	)
 	(text "To Teensy 4.1 Pin 20"
 		(exclude_from_sim no)
-		(at 112.268 82.296 0)
+		(at 112.268 78.486 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -324,7 +324,7 @@
 	)
 	(text "Pin A: TFP Switch 1"
 		(exclude_from_sim no)
-		(at 40.132 53.594 0)
+		(at 80.772 53.594 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -362,7 +362,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 60.96) (xy 110.49 60.96)
+			(xy 68.58 60.96) (xy 110.49 60.96)
 		)
 		(stroke
 			(width 0)
@@ -372,7 +372,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 55.88) (xy 100.33 80.01)
+			(xy 100.33 55.88) (xy 100.33 76.2)
 		)
 		(stroke
 			(width 0)
@@ -402,7 +402,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 55.88) (xy 100.33 55.88)
+			(xy 69.85 55.88) (xy 100.33 55.88)
 		)
 		(stroke
 			(width 0)
@@ -412,7 +412,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 80.01) (xy 124.46 80.01)
+			(xy 100.33 76.2) (xy 124.46 76.2)
 		)
 		(stroke
 			(width 0)
@@ -452,7 +452,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 66.04) (xy 120.65 66.04)
+			(xy 67.31 66.04) (xy 120.65 66.04)
 		)
 		(stroke
 			(width 0)
@@ -472,7 +472,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 60.96) (xy 110.49 72.39)
+			(xy 110.49 60.96) (xy 110.49 71.12)
 		)
 		(stroke
 			(width 0)
@@ -482,7 +482,7 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 72.39) (xy 135.89 72.39)
+			(xy 110.49 71.12) (xy 135.89 71.12)
 		)
 		(stroke
 			(width 0)
