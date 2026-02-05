@@ -193,11 +193,10 @@ VR sensor (-) --+------------+-- GND                              |
 - 100k resistor: **1** (VSS hysteresis)
 
 **Input conditioning other:**
-- 0.1uF caps: **5** (TPS, temp, line pressure, VSS coupling, VSS output)
+- 0.1uF caps: **11 total** — 3 input filters (TPS, temp, line pressure), 3 VSS (coupling, output, LM2903 decoupling), 5 solenoid driver decoupling (SSA, SSB, TCC, TCC PWM, EPC)
 - 1N4148 diodes: **2** (VSS clamp x2)
 - 1N5817/1N5818/1N5819 diodes: **8** (TPS, RPM, line pressure, brake clamps)
 - LM2903N (VR comparator): **1**
-- 0.1uF caps (driver decoupling): **4-10**
 
 **Connectors:**
 - Deutsch DT connectors + pins/seals: **as needed**

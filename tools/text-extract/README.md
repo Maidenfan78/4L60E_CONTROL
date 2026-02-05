@@ -18,10 +18,21 @@ This creates `*.pdf.txt` files next to each PDF.
 
 ## Image -> text (OCR)
 
-If you want OCR for diagrams/pinouts, install Tesseract:
-- `choco install tesseract`
+Install Tesseract:
 
-Then a similar script can be added.
+```powershell
+choco install tesseract
+```
+
+Then run:
+
+```powershell
+./image-to-text.ps1 -Root "C:\Users\Sav\ProgramingProjects\4l60e_control\resources" -Force
+```
+
+Notes:
+- OCR quality varies on wiring diagrams. Even rough text helps search.
+- Default skip: images > 8MB (tweak with `-MaxFileMb`).
 
 ## Notes
 

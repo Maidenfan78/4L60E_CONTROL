@@ -5,8 +5,10 @@
 - [ ] Read range selector inputs (1/2/3/D pins)
 - [ ] Command SSA/SSB based on selected gear
 - [ ] Fixed EPC duty (~10-15% = firm but not max pressure)
-- [ ] Serial logging of gear state and inputs
+- [x] Serial logging of gear state and inputs (implemented: temp + pressure switches)
 - [ ] Verify failsafe: SSA/SSB OFF on boot = 3rd gear
+- [x] **Trans temp sensor:** Firmware implemented with lookup table
+- [x] **Pressure switches:** Firmware implemented (OEM truth table, needs verification)
 
 ## Phase 2 — Speed Safety
 
@@ -45,6 +47,8 @@
 ## Hardware
 
 - [x] Finalize solenoid driver schematic and BOM
+- [x] **Brake switch verified** (+12V-switched, schematic is correct)
+- [ ] **Select connectors** (Deutsch DTM or Amphenol Superseal — NOT GX20)
 - [ ] Build driver board prototype
 - [ ] Confirm pin mapping against Teensy 4.1 layout
 - [ ] Decide VSS conditioning (VR → LM2903N comparator or Hall → direct)
@@ -55,3 +59,17 @@
 - [ ] PlatformIO build/upload script
 - [ ] Serial monitor with gear state display
 - [ ] Basic logging to SD card (optional)
+
+---
+
+## Calibration (See CALIBRATION_NOTES.md & PRESSURE_SWITCH_VERIFICATION.md)
+
+- [x] **Trans temp sensor:** OEM resistance values confirmed (3500Ω @ 20°C, 178Ω @ 100°C)
+- [x] **Pressure switches:** OEM truth table confirmed (MegaShift documentation)
+- [x] **Brake switch:** Confirmed +12V-switched (schematic correct)
+- [ ] **Trans temp ADC:** Bench test ADC values at room temp, verify lookup table
+- [ ] **Pressure switches:** ⚠️ CRITICAL - Physical verification on YOUR trans (see PRESSURE_SWITCH_VERIFICATION.md)
+- [ ] **Line pressure sensor:** Install mechanical gauge, calibrate ADC vs psi (optional but recommended)
+- [ ] **EPC pressure table:** Tune with line pressure gauge on dyno/test road
+- [ ] **Downshift limits:** Calculate based on engine redline + gear ratios
+- [ ] **TCC thresholds:** Tune lockup speed, delay, unlock conditions

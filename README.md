@@ -78,6 +78,8 @@ Raspberry Pi Zero 2 W (Logger/UI)
 - **HARDWARE.md** – Electrical architecture, I/O, drivers
 - **FIRMWARE.md** – Control logic, state machines, safety rules
 - **TODO.md** – Current build plan and next steps
+- **CALIBRATION_NOTES.md** – Vehicle-specific sensor calibration data
+- **PRESSURE_SWITCH_VERIFICATION.md** – Step-by-step guide to verify pressure switch truth table
 
 ---
 
